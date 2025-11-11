@@ -1,0 +1,119 @@
+.footersection-container {
+    border-radius: 30px 30px 0px 0;
+    background: #36404A;
+    /* background: linear-gradient(90deg, #032535, #00151e); */
+    padding: 50px 80px;
+    color: #ffffff;
+    /* width: 100%; */
+    /* margin-top: 50px; */
+    font-family: "Poppins", sans-serif;
+}
+
+.footersection-inner {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.footersection-about {
+    width: 28%;
+}
+
+.footersection-about p {
+    margin: 15px 0;
+    color: white;
+    line-height: 1.6;
+}
+
+.footersection-logo {
+    width: 160px;
+}
+
+.footersection-social-icons {
+    display: flex;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.footersection-icon {
+    /* background: #006b8e; */
+    border: 1px solid white;
+    padding: 10px;
+    border-radius: 30%;
+    font-size: 16px;
+    color: #ffffff;
+    transition: 0.3s ease;
+}
+
+.footersection-icon:hover {
+    transform: translateY(-5px);
+}
+
+/* Links Section */
+.footersection-links h3,
+.footersection-contact h3 {
+    margin-bottom: 15px;
+    font-size: 20px;
+    
+}
+
+.footersection-links a {
+    display: block;
+    color: #c9d7e0;
+    text-decoration: none;
+    margin-bottom: 8px;
+    transition: 0.3s;
+}
+
+.footersection-links a:hover {
+    transform: translateX(5px);
+    color: #fffffe;
+}
+
+/* Contact styles */
+.footersection-contact p {
+    /* margin-bottom: 8px; */
+    color: #c9d7e0;
+}
+
+.footersection-contact img {
+    
+    padding: 4px;
+font-size: 28px;
+border-radius: 50%;
+    color: #f7f7f7;
+    border: 1px solid white;
+}
+/* Divider */
+.footersection-divider {
+    border: none;
+    height: 1px;
+    background: #fafafa;
+    margin: 35px 0;
+}
+
+/* Footer bottom text */
+.footersection-copy {
+    text-align: center;
+    color: #ffffff;
+    font-size: 14px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .footersection-inner {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footersection-about,
+    .footersection-links,
+    .footersection-contact {
+        width: 100%;
+    }
+
+    .footersection-social-icons {
+        justify-content: center;
+    }
+}

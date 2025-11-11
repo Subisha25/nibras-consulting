@@ -1,0 +1,183 @@
+body {
+  /* background: #CED7E4; */
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+.aboutconsulting1 {
+  background: #CED7E4;
+}
+.consulting-container {
+  display: flex;
+  padding: 40px;
+  gap: 40px;
+}
+
+/* LEFT MENU */
+.consulting-leftmenu {
+  width: 260px;
+  position: sticky;
+  top: 120px;
+  height: fit-content;
+}
+
+.consulting-leftmenu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.consulting-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background: #f5f5f5;
+  padding: 16px 18px;
+  margin-bottom: 14px;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.consulting-item:hover {
+  background: #fdfdfe;
+}
+
+.consulting-item.active {
+  border-color: #FF7518;
+    background: linear-gradient(to bottom right, #FF7518, #eef3ff);
+
+  /* background: #EDE7FF; */
+}
+
+.step-icon {
+  font-size: 24px;
+}
+
+.consulting-item h4 {
+  font-size: 14px;
+  color: #656363;
+  margin: 0;
+}
+
+.consulting-item p {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0;
+  color: #171717;
+}
+
+/* RIGHT CARDS */
+.consulting-rightcontent {
+  flex: 1;
+}
+
+.consulting-card {
+  background: linear-gradient(to bottom right, #ffffff, #eef3ff);
+  padding: 40px;
+  border-radius: 20px;
+  margin-bottom: 50px;
+  border: 1px solid #e2e2e2;
+  box-shadow: 0 0 12px rgba(0,0,0,0.05);
+  transition: transform .3s ease;
+}
+
+.consulting-card:hover {
+  transform: translateY(-4px);
+}
+
+.consulting-title {
+  font-size: 28px;
+  color: #2b2b2b;
+  margin: 0;
+}
+
+.consulting-sub {
+  color: #6b6b6b;
+  margin-top: 8px;
+  font-size: 16px;
+}
+
+.consulting-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.consulting-tags span {
+  background: #f4f2ff;
+  color: #4b0082;
+  padding: 8px 14px;
+  border-radius: 50px;
+  font-size: 14px;
+  border: 1px solid #d5ccff;
+}
+
+.consulting-text {
+  color: #444;
+  line-height: 1.6;
+}
+/* Active Right Card Effect */
+.consulting-card.active-card {
+  border: 2px solid #FF7518;
+  background: linear-gradient(to bottom right, #f8f5ff, #eef3ff);
+  box-shadow: 0 0 18px rgba(124, 58, 237, 0.25);
+  transform: scale(1.02);
+  transition: all 0.3s ease;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #fff;
+  color: #333;
+}
+
+.industries {
+  text-align: center;
+  padding: 100px 20px;
+  max-width: 900px;
+  margin: auto;
+}
+
+.title {
+  font-size: 48px;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 20px;
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, #5A189A, #9D4EDD, #5A5BF0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.description {
+  font-size: 18px;
+  line-height: 1.7;
+  color: #555;
+  max-width: 750px;
+  margin: auto;
+}
+
+
+/* Responsive */
+@media (max-width: 900px) {
+  .consulting-container {
+    flex-direction: row;
+    padding: 20px;
+  }
+  .consulting-leftmenu {
+    display: none;
+  }
+  /* .consulting-item {
+    flex-direction: column;
+    min-width: 160px;
+    text-align: center;
+  } */
+}

@@ -1,0 +1,66 @@
+<!-- main.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nibras Consulting</title>
+      <link rel="stylesheet" href="./css/index.css">
+
+</head>
+<body>
+    <div id="header-container"></div>
+
+  <div id="banner-container"></div>
+  <div id="scroll-container"></div>
+  <div id="tech-container"></div>
+      <div id="cta-container"></div>
+
+  <div id="homecontact-container"></div>
+
+  <div id="footer-container"></div>
+
+  <script>
+  fetch("../html/header.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("header-container").innerHTML = data;
+
+      // ✅ Load the JS file *after* header is added to the DOM
+      const script = document.createElement("script");
+      script.src = "../js/header.js";
+      document.body.appendChild(script);
+    });
+    fetch("../html/footer.html")
+        .then(res => res.text())
+        .then(data => document.getElementById("footer-container").innerHTML = data);
+    // Load header
+    fetch("../html/banner.html")
+      .then(res => res.text())
+      .then(data => document.getElementById("banner-container").innerHTML = data);
+
+        // Load scroll section
+  fetch("../html/scroll.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("scroll-container").innerHTML = data;
+      const script = document.createElement("script");
+      script.src = "../js/scroll.js"; // run your scroll animation JS
+      document.body.appendChild(script);
+    });
+    // Load banner
+  
+    // Load about section (banner keela)
+    fetch("../html/tech.html")
+      .then(res => res.text())
+      .then(data => document.getElementById("tech-container").innerHTML = data);
+  fetch("../html/homecontact.html")
+      .then(res => res.text())
+      .then(data => document.getElementById("homecontact-container").innerHTML = data);
+      fetch("../html/cta.html")
+      .then(res => res.text())
+      .then(data => document.getElementById("cta-container").innerHTML = data);
+
+  </script>
+</body>
+</html>

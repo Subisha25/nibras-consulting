@@ -1,0 +1,259 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #0a0f1a;
+  color: white;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40px 60px;
+  background-color: #081120;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: white;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.navbar ul {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.navbar a:hover {
+  color: #00b4ff;
+}
+
+.cta-btn {
+  background: linear-gradient(90deg, #00b4ff, #007bff);
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.cta-btn:hover {
+  opacity: 0.8;
+}
+
+/* Banner */
+.banner {
+  position: relative;
+  height: 100vh;
+  background: url('../img/consulting.jpg')
+    no-repeat center center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.banner-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.banner-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  max-width: 1200px;
+  position: relative;
+  z-index: 2;
+  gap: 50px;
+}
+
+.banner-content .left {
+  margin-top: 50px;
+  max-width: 700px;
+}
+
+.banner-content h3 {
+  color: #00b4ff;
+  font-weight: 600;
+}
+
+.banner-content h1 {
+  font-size: 52px;
+  font-weight: 800;
+  line-height: 1.2;
+  margin: 15px 0;
+}
+
+.banner-content p {
+  font-size: 16px;
+  color: #cfd3da;
+    line-height: 1.8;
+
+  margin-bottom: 20px;
+}
+.banner-content ul {
+  margin-bottom: 25px;
+  line-height: 1.8;
+  color: #e6e6e6;
+  list-style: none;
+  padding-left: 0;
+}
+
+.banner-content li {
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 8px;
+}
+
+.banner-content li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: orange;
+  font-weight: bold;
+}
+
+
+.buttons {
+  display: flex;
+  gap: 15px;
+}
+
+.btn-primary {
+  background: linear-gradient(90deg, #00b4ff, #007bff);
+  padding: 10px 25px;
+  border-radius: 25px;
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.btn-primary:hover {
+  opacity: 0.8;
+}
+
+.btn-outline {
+  border: 2px solid #00b4ff;
+  color: white;
+  padding: 10px 25px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.btn-outline:hover {
+  background-color: #00b4ff;
+}
+
+/* Right Features */
+.right {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.feature {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 15px 120px;
+  border-radius: 15px;
+  text-align: center;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.feature:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .banner-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  .right {
+    width: 100%;
+    align-items: center;
+  }
+  .feature {
+    width: 80%;
+  }
+}
+
+
+/* Responsive for mobile phones */
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px 20px;
+  }
+
+  .navbar ul {
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .cta-btn {
+    margin-top: 10px;
+    align-self: flex-start;
+  }
+
+  .banner {
+    height: auto;
+    padding: 60px 0;
+  }
+
+  .banner-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+  }
+
+  .banner-content h1 {
+    font-size: 32px;
+  }
+
+  .banner-content p {
+    font-size: 14px;
+  }
+
+  .buttons {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .feature {
+    width: 100%;
+    padding: 15px 20px;
+  }
+
+  .right {
+    gap: 15px;
+  }
+}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nibras Consulting</title>
+  <link rel="stylesheet" href="../css/banner.css" />
+</head>
+<body>
+
+  
+
+  <!-- Banner Section -->
+  <section class="banner">
+    <div class="banner-overlay"></div>
+    <div class="banner-content">
+      <div class="left">
+        <h3>From Code to Clicks.</h3>
+        <h1>We Take Your Business<br />to the World!</h1>
+        <p>
+          Turn strategy into revenue with a single team that can design, build, and<br/> grow your brand.
+        </p>
+        <ul>
+          <li> Client retention built on measurable results.</li>
+          <li> 20+ years combined expertise across industries.</li>
+          <li> Marketing ranked by outcomes, not vanity metrics.</li>
+          <li> ROI-driven campaigns turning clicks into real growth.</li>
+        </ul>
+        <div class="buttons">
+          <a href="#" class="btn-primary">Get Free Consultation</a>
+          <a href="#" class="btn-outline">Explore Our Services</a>
+        </div>
+      </div>
+
+      <div class="right">
+        <div class="feature">Performance-First Builds</div>
+        <div class="feature">Security & Best Practices</div>
+        <div class="feature">SEO & Analytics Included</div>
+      </div>
+    </div>
+  </section>
+  <div id="scroll-container"></div>
+<script>
+  fetch("scroll.html")
+        .then(res => res.text())
+        .then(data => document.getElementById("scroll-container").innerHTML = data);
+</script>
+</body>
+</html>

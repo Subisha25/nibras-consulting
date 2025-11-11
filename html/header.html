@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Responsive Header</title>
+  <link rel="stylesheet" href="../css/header.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    /* ===== Base Header Styles ===== */
+    .headersection-container {
+      width: 90%;
+      background: #36404A;
+      padding: 20px 50px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      z-index: 1000;
+      border-radius: 0px 0 30px 30px;
+    }
+
+    .headersection-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .headersection-logo img {
+      height: 28px;
+      width: auto;
+    }
+
+    /* ===== Desktop Nav ===== */
+    .headersection-nav {
+      display: flex;
+      gap: 35px;
+    }
+
+    .headersection-nav a {
+      color: #fdfbf9;
+      text-decoration: none;
+      transition: 0.3s;
+      padding-bottom: 4px;
+    }
+
+    .headersection-nav a:hover {
+      border-bottom: 3px solid #f97316;
+      color: #f97316;
+    }
+
+    /* ===== Mobile Menu Icon ===== */
+    .headersection-menu-icon {
+      color: #f97316;
+      font-size: 26px;
+      cursor: pointer;
+      display: none;
+    }
+
+    /* ===== Mobile Menu (Hidden by default) ===== */
+    .headersection-mobile-menu {
+      position: fixed;
+      top: 0;
+      left: -100%; /* Hidden off-screen initially */
+      width: 70%;
+      height: 100vh;
+      background: #36404A;
+      display: flex;
+      flex-direction: column;
+      padding: 40px 25px;
+      transition: left 0.4s ease;
+      z-index: 999;
+    }
+
+    /* When active, slide in */
+    .headersection-mobile-menu.active {
+      left: 0;
+    }
+
+    .headersection-mobile-menu a {
+      color: white;
+      font-size: 20px;
+      text-decoration: none;
+      margin: 15px 0;
+      transition: 0.3s;
+    }
+
+    .headersection-mobile-menu a:hover {
+      color: #f97316;
+    }
+
+    .headersection-mobile-close {
+      align-self: flex-end;
+      font-size: 28px;
+      cursor: pointer;
+      color: #f97316;
+      margin-bottom: 20px;
+    }
+
+    /* ===== Responsive ===== */
+    @media(max-width: 900px) {
+      .headersection-nav {
+        display: none;
+      }
+
+      .headersection-menu-icon {
+        display: block;
+      }
+
+      .headersection-container {
+        padding: 10px 15px;
+        border-radius: 0px 0 25px 25px;
+      }
+
+      .headersection-logo img {
+        height: 22px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header class="headersection-container">
+  <div class="headersection-inner">
+    <!-- ✅ Logo -->
+    <div class="headersection-logo">
+      <img src="../img/Group 16.png" alt="Logo">
+    </div>
+
+    <!-- ✅ Desktop Nav -->
+    <nav class="headersection-nav">
+      <a href="../index.html">Home</a>
+      <a href="../html/about.html">About</a>
+      <a href="../html/services.html">Services</a>
+      <a href="../html/contact.html">Contact Us <span>→</span></a>
+    </nav>
+
+    <!-- ✅ Mobile Menu Icon -->
+    <div class="headersection-menu-icon" id="headerMenuOpen">
+      ☰
+    </div>
+  </div>
+
+  <!-- ✅ Mobile Menu -->
+  <div class="headersection-mobile-menu" id="headerMobileMenu">
+    <div class="headersection-mobile-close" id="headerMenuClose">✕</div>
+
+    <a href="../index.html">Home</a>
+    <a href="../html/about.html">About</a>
+    <a href="../html/services.html">Services</a>
+    <a href="../html/contact.html">Contact Us →</a>
+  </div>
+</header>
+
+<script src="../js/header.js" ></script>
+
+
+</body>
+</html>

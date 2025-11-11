@@ -1,0 +1,171 @@
+:root {
+  --brand-1: #1f8cff;
+  --brand-2: #00b4ff;
+  --muted: #a0b8d6;
+}
+
+/* ===== Base Section ===== */
+body {
+  background-color: white;
+  font-family: "Poppins", sans-serif;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+}
+
+section.section {
+  
+  padding: 80px 0;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 34px;
+  margin-bottom: 10px;
+  background: #36404A;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.section-subtitle {
+  text-align: center;
+  color: #36404A;
+  margin-bottom: 50px;
+}
+
+/* ===== Tech Carousel ===== */
+.tech-carousel {
+  --speed: 18s;
+  --gap: 24px;
+  position: relative;
+  overflow: hidden;
+  padding: 38px 0;
+}
+
+.tech-carousel::before,
+.tech-carousel::after {
+  content: "";
+  position: absolute;
+  inset: 0 auto;
+  width: 90px;
+  z-index: 2;
+  pointer-events: none;
+  top: 0;
+  bottom: 0;
+}
+
+.tech-carousel::before {
+  left: 0;
+  /* background: linear-gradient(to right,  #CED7E4, rgba(6, 21, 36, 0)); */
+}
+
+.tech-carousel::after {
+  right: 0;
+  /* background: linear-gradient(to left,  #CED7E4, rgba(6, 21, 36, 0)); */
+}
+
+.tech-track {
+  display: flex;
+  gap: var(--gap);
+  min-width: max-content;
+  animation: marquee var(--speed) linear infinite;
+  will-change: transform;
+}
+
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Tech Items */
+.tech-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-width: 140px;
+  padding: 18px 22px;
+  text-align: center;
+  background: #CED7E4; /* ✅ No background */
+  border: 2px solid #FF7518; /* ✅ Blue border */
+  border-radius: 14px;
+  box-shadow: none; /* ✅ No inner shadow */
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.tech-item:hover {
+  transform: translateY(-4px) scale(1.03);
+  border-color:#FF7518; /* brighter border on hover */
+  box-shadow: 0 6px 20px rgba(31, 140, 255, 0.25); /* subtle glow effect */
+}
+
+
+
+
+.tech-logo {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+  display: block;
+  filter: drop-shadow(0 0 10px rgba(0, 180, 255, 0.3));
+  transition: transform 0.25s ease, filter 0.25s ease;
+}
+
+.tech-item:hover .tech-logo {
+  transform: translateY(-2px) scale(1.08);
+  filter: drop-shadow(0 0 16px rgba(0, 176, 255, 0.55));
+}
+
+.tech-label {
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.2px;
+  color: #FF7518;
+  /* background: linear-gradient(90deg, var(--brand-1), var(--brand-2)); */
+  -webkit-background-clip: text;
+  /* -webkit-text-fill-color: transparent; */
+}
+
+/* Carousel dots */
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #FF7518;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.dot.active {
+  background: #FF7518;
+  width: 30px;
+  border-radius: 6px;
+  box-shadow: 0 0 18px #FF7518;
+}
+
+/* Hover pause animation */
+.tech-carousel:hover .tech-track {
+  animation-play-state: paused;
+}
+
+/* Motion-safe */
+@media (prefers-reduced-motion: reduce) {
+  .tech-track {
+    animation: none !important;
+  }
+}
+
+@media (max-width: 600px) {
+section.section {
+margin-top: 500px;}
+}
+

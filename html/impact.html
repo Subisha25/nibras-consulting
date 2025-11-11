@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Impact We Care About</title>
+  <style>
+    :root {
+      --text-dark: #0b1220;
+      --accent-1: #1f8cff;
+      --accent-2: #00b4ff;
+      --accent-3: #73e0ff;
+      --muted: #7a7a7a;
+      --panel-bg: #ffffff;
+      --card-border: rgba(0,0,0,0.08);
+      --soft-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background: #f7f9fc;
+    }
+
+    .impact {
+      background-color: #CED7E4;
+      padding: 60px 20px;
+    }
+
+    /* heading */
+    h1.hero {
+      text-align: center;
+      font-size: 2.2rem;
+      margin: 0 0 30px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      line-height: 1.3;
+    }
+
+    .hero .grad {
+      background: linear-gradient(90deg, #ff3cac, #784ba0, #2b86c5);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    /* stats grid */
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      justify-content: center;
+    }
+
+    /* stat card */
+    .stat {
+      background: var(--panel-bg);
+      border-radius: 12px;
+      border: 1px solid var(--card-border);
+      padding: 20px;
+      box-shadow: var(--soft-shadow);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .stat:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+    }
+
+    .label {
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .value {
+      font-weight: 800;
+      font-size: 1.6rem;
+      margin-bottom: 8px;
+      color: var(--text-dark);
+    }
+
+    .sub {
+      font-size: 14px;
+      color: var(--muted);
+      margin-bottom: 12px;
+      line-height: 1.4;
+    }
+
+    .progress-wrap {
+      height: 8px;
+      background: #f0f0f3;
+      border-radius: 999px;
+      overflow: hidden;
+      border: 1px solid rgba(0, 0, 0, 0.03);
+    }
+
+    .progress {
+      height: 100%;
+      background: linear-gradient(90deg, #ff3cac, #784ba0, #2b86c5);
+      border-radius: 999px;
+    }
+
+    /* Responsive typography */
+    @media (max-width: 768px) {
+      h1.hero {
+        font-size: 1.8rem;
+        margin-bottom: 25px;
+      }
+
+      .stat {
+        padding: 16px;
+      }
+
+      .value {
+        font-size: 1.4rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .impact {
+        padding: 40px 15px;
+      }
+
+      h1.hero {
+        font-size: 1.6rem;
+      }
+
+      .stat {
+        padding: 14px;
+      }
+
+      .sub {
+        font-size: 13px;
+      }
+
+      .value {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+
+  <div class="impact">
+  <h1 class="hero">Impact we <span class="grad">care about</span></h1>
+
+  <div class="stats-row" role="list">
+    <div class="stat" role="listitem">
+      <div class="label">Higher Visibility</div>
+      <div class="value"> +250 <span style="font-size:12px;color:var(--muted)">%</span></div>
+      <div class="sub"> Boost in organic reach and brand awareness</div>
+      <div class="progress-wrap"><div class="progress" style="width:88%"></div></div>
+    </div>
+
+    <div class="stat">
+      <div class="label">Lower Ad Spend</div>
+      <div class="value" >–35 <span style="font-size:12px;color:var(--muted)">%</span></div>
+      <div class="sub">Reduced wasted budget through smarter targeting</div>
+      <div class="progress-wrap"><div class="progress" style="width:60%"></div></div>
+    </div>
+
+    <div class="stat">
+      <div class="label">Faster Conversions</div>
+      <div class="value">1.8 <span style="font-size:12px;color:var(--muted)">%</span></div>
+      <div class="sub">Improved conversion rates across campaigns</div>
+      <div class="progress-wrap"><div class="progress" style="width:52%"></div></div>
+    </div>
+
+    <div class="stat">
+      <div class="label">Quicker Setup</div>
+      <div class="value">2 wks</div>
+      <div class="sub"> Average time to launch a full marketing funnel</div>
+      <div class="progress-wrap"><div class="progress" style="width:44%"></div></div>
+    </div>
+
+    <div class="stat">
+      <div class="label">Quality Leads</div>
+      <div class="value">+40 <span style="font-size:12px;color:var(--muted)">%</span></div>
+      <div class="sub">More qualified prospects ready to buy</div>
+      <div class="progress-wrap"><div class="progress" style="width:62%"></div></div>
+    </div>
+
+    <div class="stat">
+      <div class="label">Stronger Performance</div>
+      <div class="value">90 score <span style="font-size:12px;color:var(--muted)">+</span></div>
+      <div class="sub">Across SEO, UX, and speed benchmarks</div>
+      <div class="progress-wrap"><div class="progress" style="width:78%"></div></div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

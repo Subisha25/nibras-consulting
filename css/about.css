@@ -1,0 +1,247 @@
+/* ==============================
+    BACKGROUND + BANNER SECTION
+============================== */
+
+body {
+  overflow-x: hidden;
+  
+}
+
+.headersection-container {
+
+    position: fixed;
+    width: 100%;
+    top: 0;
+}
+
+/* Add margin-top so content starts BELOW the header height */
+.aboutpage-banner {
+    margin-top: 90px;  /* header height adjust panna */
+}
+
+.aboutpage-banner {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* BG Image */
+.aboutpage-banner-bg {
+    background-image: url("https://images.unsplash.com/photo-1560264418-c4445382edbc");
+    background-size: cover;
+    background-position: center;
+    filter: blur(4px);
+    -webkit-filter: blur(4px);
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    z-index: -1;
+}
+
+/* Content Box */
+.aboutpage-banner-content {
+    /* position: fixed; */
+    width: 70%;
+    background-color: rgba(0, 0, 0, 0.55);
+    padding: 45px;
+    border-radius: 25px;
+    color: white;
+    text-align: left;
+}
+
+/* LABEL */
+.aboutpage-label {
+    font-size: 14px;
+    letter-spacing: 2px;
+    color: #d1d1d1;
+}
+
+/* HEADING */
+.aboutpage-title {
+    font-size: 42px;
+    font-weight: bold;
+    margin: 12px 0;
+    line-height: 1.3;
+}
+
+/* DESCRIPTION */
+.aboutpage-desc {
+    color: #cccccc;
+    margin-bottom: 25px;
+    font-size: 16px;
+    max-width: 85%;
+}
+
+/* BUTTON */
+.aboutpage-btn {
+    padding: 12px 26px;
+    background-color: #FF7518;
+    border-radius: 40px;
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.aboutpage-btn:hover {
+    opacity: 0.85;
+}
+
+/* -------------------------------------
+      FULL SCREEN VIDEO SCROLL EFFECT
+-------------------------------------- */
+.aboutpage-video-section {
+    background-color: white;
+    height: 250vh;
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+}
+
+/* Fullscreen video - shrinks from RIGHT side */
+#aboutpage-video {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    transition: width 0.3s ease;
+    border-radius: 0;
+    left: 0;
+}
+
+/* Right side content - slides from BOTTOM */
+.aboutpage-video-content {
+    position: absolute;
+    right: 5%;
+    bottom: 20%;
+    transform: translateY(100px);
+    width: 40%;
+    opacity: 0;
+    transition: opacity 0.8s ease, transform 0.8s ease;
+    z-index: 10;
+}
+
+.aboutpage-video-content.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.aboutpage-side-title {
+    color: #FF7518;
+    letter-spacing: 2px;
+    font-weight: 600;
+    font-size: 58px;
+    margin-bottom: 15px;
+}
+
+.aboutpage-video-content p {
+    color: #333;
+    font-size: 20px;
+    line-height: 2;
+    margin-bottom: 20px;
+}
+
+.aboutpage-side-btn {
+    background: #FF7518;
+    padding: 12px 24px;
+    border-radius: 40px;
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.aboutpage-side-btn:hover {
+    opacity: 0.85;
+}
+
+
+/* RESPONSIVE */
+@media(max-width: 768px) {
+    .aboutpage-banner-content {
+        width: 90%;
+        padding: 25px;
+    }
+
+    .aboutpage-title {
+        font-size: 28px;
+    }
+
+    .aboutpage-desc {
+        font-size: 14px;
+    }
+
+    .aboutpage-video-content {
+        width: 90%;
+        right: 5%;
+    }
+}
+
+    /* RESET */
+    
+
+    /* ✅ MOBILE VIEW — HIDE VIDEO, SHOW CONTENT FULL WIDTH */
+    @media (max-width: 475px) {
+      .aboutpage-video-section {
+        background: #f6f8fa;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 60px 20px;
+      }
+
+      .aboutpage-video-section video {
+        display: none !important;
+      }
+
+      .aboutpage-video-content {
+        position: static;
+        width: 100%;
+        padding: 0;
+        text-align: center;
+        color: #111;
+        opacity: 1 !important;
+        transform: none !important;
+      }
+
+      .aboutpage-video-content h2 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        color: #222;
+      }
+
+      .aboutpage-video-content p {
+        font-size: 0.95rem;
+        color: #444;
+        line-height: 1.6;
+        margin-bottom: 1.5rem;
+      }
+
+      .aboutpage-side-btn {
+        padding: 0.65rem 1.2rem;
+        font-size: 0.95rem;
+      }
+    }
+
+    /* Slightly larger mobile/tablet tweak */
+    @media (min-width: 476px) and (max-width: 767px) {
+      .aboutpage-video-section {
+        height: 70vh;
+      }
+
+      .aboutpage-video-content {
+        width: 90%;
+        padding: 2rem;
+        text-align: center;
+      }
+
+      .aboutpage-video-content h2 {
+        font-size: 1.8rem;
+      }
+    }
+  

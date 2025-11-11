@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nibras – 110% Visual Scale</title>
+  <style>
+    :root {
+      --page-bg: #fbfbfd;
+      --hero-a: #6c7d8f;
+      --hero-b: #8ea0b2;
+      --muted: #6b6b6b;
+      --ink: #1f2a37;
+      --ink-2: #2d3748;
+      --accent: #FF7518;
+      --card: #ffffff;
+      --stroke: rgba(0, 0, 0, .08);
+      --chip: rgba(255, 255, 255, .08);
+      --chip-stroke: rgba(255, 255, 255, .25);
+      --shadow: 0 6px 24px rgba(16, 24, 40, .08);
+    }
+
+    * { box-sizing: border-box; }
+    body { height: 100%; }
+
+    body {
+      margin: 0;
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont,'Segoe UI', Roboto,'Helvetica Neue', Arial, 'Noto Sans';
+      background: var(--page-bg);
+      color: var(--ink);
+      line-height: 1.6;
+      font-size: 17px;
+    }
+
+    /* ---------- HERO ---------- */
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 60px 0 72px;
+      background:
+        linear-gradient(140deg, rgba(255,255,255,.04) 0 35%, transparent 35%) top right/70% 100% no-repeat,
+        linear-gradient(135deg, var(--hero-a) 0%, var(--hero-b) 60%);
+    }
+    .container { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
+
+    .eyebrow {
+      margin-top: 30px;
+      color: #dfe7ef;
+      letter-spacing: .12em;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .hero h1 {
+      margin: 16px 0 18px;
+      color: #fff;
+      font-size: 62px;
+      line-height: 1.05;
+      font-weight: 800;
+      letter-spacing: -.02em;
+      max-width: 700px;
+    }
+
+    .hero p.lead {
+      color: #e9eef4;
+      font-size: 17px;
+      max-width: 700px;
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      margin-top: 26px;
+    }
+
+    .chip {
+      display: flex;
+      align-items: flex-start;
+      gap: 13px;
+      padding: 20px 22px;
+      border-radius: 12px;
+      border: 1px solid #fff;
+      background: var(--chip);
+      color: #fff;
+      font-weight: 600;
+      font-size: 15.8px;
+      line-height: 1.4;
+      backdrop-filter: saturate(140%) blur(2px);
+      min-height: 66px;
+    }
+
+    .chip img {
+      width: 24px;
+      height: 24px;
+      object-fit: contain;
+      margin-top: 4px;
+    }
+
+    .chip-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .chip-text span:last-child {
+      margin-top: 3px;
+    }
+
+    .cta-row {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 16px 26px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 16px;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+      box-shadow: 0 10px 22px rgba(255,107,53,.28);
+    }
+
+    .btn-primary:hover { filter: brightness(.96); }
+
+    .btn-ghost {
+      border: 1px solid rgba(255,255,255,.35);
+      color: #fff;
+    }
+
+    .btn-ghost:hover { background: rgba(255,255,255,.08); }
+
+    /* ---------- BULLETS STRIP ---------- */
+    .strip {
+      background: #fff;
+      border-top: 1px solid var(--stroke);
+      border-bottom: 1px solid var(--stroke);
+    }
+
+    .bullet-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px 44px;
+      padding: 20px 0;
+    }
+
+    .bullet {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      color: #4b5563;
+      font-size: 16px;
+    }
+
+    .tick {
+      color: var(--accent);
+      font-weight: 900;
+      margin-top: 3px;
+    }
+
+    /* ---------- SECTION TITLES ---------- */
+    .section {
+      padding: 54px 0 20px;
+      background: #fff;
+    }
+
+    .section h2 {
+      font-size: 48px;
+      line-height: 1.1;
+      letter-spacing: -.01em;
+      color: #36404A;
+      margin: 0 0 10px;
+    }
+
+    .section .subtitle {
+      font-size: 24px;
+      color: #36404A;
+      margin-bottom: 18px;
+    }
+
+    .section .desc {
+      max-width: 900px;
+      color: #36404A;
+      font-size: 17px;
+      margin-bottom: 8px;
+    }
+
+    /* ---------- SERVICES ---------- */
+    .services {
+      background: linear-gradient(#CED7E4, #f0f3f7);
+      padding: 42px 0 80px;
+      border-top: 1px solid var(--stroke);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 52px 60px;
+    }
+
+    .card {
+      display: grid;
+      grid-template-rows: auto 1fr;
+      gap: 0;
+      background: transparent;
+    }
+
+    .thumb {
+      width: 100%;
+      height: 330px;
+      object-fit: contain;
+    }
+
+    .copy {
+      padding: 20px 8px 8px;
+    }
+
+    .title {
+      font-size: 24px;
+      color: #36404A;
+      font-weight: 500;
+      margin: 3px 0 12px;
+    }
+
+    .para {
+      color: #36404A;
+      font-size: 16.3px;
+      line-height: 1.8;
+      max-width: 540px;
+    }
+
+    .more {
+      margin-top: 16px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 20px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 15px;
+      background: #f3f4f6;
+      color: #4b5563;
+      border: 1px solid #6D8196;
+    }
+
+    .more:hover { background: #ebeef3; }
+
+    .row { display: contents; }
+    .row .left { grid-column: 1; }
+    .row .right { grid-column: 2; }
+
+    /* ---------- WHY CHOOSE ---------- */
+    .why {
+      text-align: center;
+      background: #fff;
+      padding: 62px 0 88px;
+    }
+
+    .why h2 {
+      font-size: 44px;
+      margin-bottom: 12px;
+    }
+
+    .why .desc {
+      font-size: 17px;
+      margin: 0 auto 26px;
+      max-width: 860px;
+    }
+
+    /* ---------- MOBILE ---------- */
+    @media (max-width: 1024px) {
+      .grid { grid-template-columns: 1fr; gap: 40px; }
+      .hero h1 { font-size: 50px; }
+      .section h2 { font-size: 38px; }
+      .section .subtitle { font-size: 20px; }
+      .container { padding: 0 20px; }
+    }
+
+    /* ===== MOBILE VIEW ONLY (320px–475px) ===== */
+    @media (max-width: 475px) {
+
+      body {
+        font-size: 15px;
+        line-height: 1.5;
+      }
+
+      .container {
+        padding: 0 16px;
+      }
+
+      /* HERO SECTION */
+      .hero {
+        padding: 40px 0 52px;
+        text-align: center;
+      }
+
+      .hero h1 {
+        font-size: 36px;
+        line-height: 1.15;
+        margin-bottom: 12px;
+      }
+
+      .hero p.lead {
+        font-size: 15px;
+        max-width: 100%;
+      }
+
+      .eyebrow {
+        font-size: 12px;
+      }
+
+      /* CHIPS */
+      .chips {
+        justify-content: center;
+        gap: 12px;
+        margin-top: 22px;
+      }
+
+      .chip {
+        width: 100%;
+        justify-content: center;
+        padding: 14px 18px;
+        border-radius: 10px;
+        min-height: auto;
+        font-size: 14px;
+      }
+
+      .chip img {
+        width: 20px;
+        height: 20px;
+        margin-top: 0;
+      }
+
+      .chip-text span:last-child {
+        margin-top: 2px;
+      }
+
+      /* CTA BUTTONS */
+      .cta-row {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+        margin-top: 22px;
+      }
+
+      .btn {
+        font-size: 14px;
+        padding: 12px 20px;
+        width: 100%;
+        justify-content: center;
+      }
+
+      /* BULLET STRIP */
+      .bullet-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        padding: 16px 0;
+      }
+
+      .bullet {
+        font-size: 14.5px;
+      }
+
+      /* SECTION HEADINGS */
+      .section {
+        padding: 40px 0 16px;
+        text-align: center;
+      }
+
+      .section h2 {
+        font-size: 30px;
+        margin-bottom: 6px;
+      }
+
+      .section .subtitle {
+        font-size: 18px;
+        margin-bottom: 10px;
+      }
+
+      .section .desc {
+        font-size: 15px;
+        margin-bottom: 8px;
+      }
+
+      /* SERVICES */
+      .services {
+        padding: 32px 0 60px;
+      }
+
+      .grid {
+        display: flex;
+        flex-direction: column;
+        gap: 36px;
+      }
+
+      /* CRITICAL FIX: Image above, text below for ALL rows */
+      .row {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+      }
+
+      /* Force all cards to stack vertically */
+      .row .left,
+      .row .right {
+        width: 100%;
+        grid-column: auto;
+      }
+
+      /* Ensure images always appear first */
+      .row .left.card:has(.thumb),
+      .row .right.card:has(.thumb) {
+        order: -1;
+      }
+
+      /* Content cards appear after images */
+      .row .left.card:has(.copy),
+      .row .right.card:has(.copy) {
+        order: 1;
+      }
+
+      .thumb {
+        height: auto;
+        width: 100%;
+        border-radius: 10px;
+        object-fit: cover;
+      }
+
+      .copy {
+        padding: 10px 6px 0;
+        text-align: center;
+      }
+
+      .title {
+        font-size: 20px;
+        margin-bottom: 8px;
+      }
+
+      .para {
+        font-size: 14.5px;
+        line-height: 1.7;
+      }
+
+      .more {
+        margin-top: 14px;
+        font-size: 14px;
+        padding: 8px 16px;
+      }
+
+      /* WHY CHOOSE */
+      .why {
+        padding: 40px 0 64px;
+      }
+
+      .why h2 {
+        font-size: 28px;
+      }
+
+      .why .desc {
+        font-size: 15px;
+        padding: 0 10px;
+      }
+
+      .why .btn {
+        font-size: 14px;
+        padding: 12px 22px;
+      }
+
+      /* IMAGE SIZES FOR SPECIFIC BREAKPOINTS */
+      @media (max-width: 425px) {
+        .hero h1 { font-size: 32px; }
+        .chip { font-size: 13.5px; padding: 12px 14px; }
+        .btn { font-size: 13.5px; }
+      }
+
+      @media (max-width: 375px) {
+        .hero h1 { font-size: 28px; }
+        .hero p.lead { font-size: 14px; }
+        .chip { font-size: 13px; }
+        .title { font-size: 18px; }
+      }
+
+      @media (max-width: 320px) {
+        .hero h1 { font-size: 26px; }
+        .btn { font-size: 13px; padding: 10px 16px; }
+        .chip { padding: 10px 12px; font-size: 12.5px; }
+        .para { font-size: 13.5px; }
+      }
+    }
+  </style>
+</head>
+<body>
+
+    <div id="header-container" ></div>
+
+
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <div class="container">
+      <div class="eyebrow">FROM CODE TO CLICKS</div>
+      <h1>We Take Your Business to the World!</h1>
+      <p class="lead">Turn strategy into revenue with a single team that can design, build, and grow your brand.</p>
+
+      <div class="chips">
+        <div class="chip">
+          <img src="../img/Frame.png" alt="">
+          <div class="chip-text">
+            <span>Performance-First</span>
+            <span>Builds</span>
+          </div>
+        </div>
+        <div class="chip">
+          <img src="../img/Frame (1).png" alt="">
+          <div class="chip-text">
+            <span>Security & Best</span>
+            <span> Practices</span>
+          </div>
+        </div>
+        <div class="chip">
+          <img src="../img/Frame (2).png" alt="">
+          <div class="chip-text">
+            <span>SEO & Analytics</span>
+            <span> Included</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#">Get Free Consultation →</a>
+        <a class="btn btn-ghost" href="#">Explore Our Services →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== BULLETS STRIP ===== -->
+  <section class="strip">
+    <div class="container">
+      <div class="bullet-grid">
+        <div class="bullet"><span class="tick">✓</span><span>Client retention built on measurable results.</span></div>
+        <div class="bullet"><span class="tick">✓</span><span>Marketing ranked by outcomes, not vanity metrics.</span></div>
+        <div class="bullet"><span class="tick">✓</span><span>20+ years combined expertise across industries.</span></div>
+        <div class="bullet"><span class="tick">✓</span><span>ROI-driven campaigns turning clicks into real growth.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FULL-SERVICE ===== -->
+  <section class="section">
+    <div class="container">
+      <h2>Full-Service Digital Agency</h2>
+      <div class="subtitle">Web Development, SEO &amp; Digital Marketing Solutions</div>
+      <p class="desc">Transform your online presence with Nibras Consulting — your strategic partner for custom web development, search engine optimization, and results-driven digital marketing.</p>
+      <p class="desc">We build high-converting websites and execute data-driven strategies that grow your business.</p>
+    </div>
+  </section>
+
+  <!-- ===== SERVICES ===== -->
+  <section class="services">
+    <div class="container">
+      <div class="grid">
+
+        <!-- Row 1 -->
+        <div class="row">
+          <div class="left card">
+            <img class="thumb" src="../img/Rectangle 9 (1).png" alt="E-commerce">
+          </div>
+          <div class="right card">
+            <div class="copy">
+              <div class="title">Ecommerce Website Development</div>
+              <p class="para">Launch powerful online stores built to sell. We create custom ecommerce solutions with seamless checkout experiences, mobile optimization, and conversion-focused design that turn browsers into buyers.</p>
+              <a class="more" href="#">Know More →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Row 2 -->
+        <div class="row">
+          <div class="left card">
+            <div class="copy">
+              <div class="title">Custom Website Development &amp; Design</div>
+              <p class="para">Get fast-loading, mobile-responsive websites built on secure foundations. From corporate sites to complex web applications, we deliver scalable solutions engineered for performance and user experience.</p>
+              <a class="more" href="#">Know More →</a>
+            </div>
+          </div>
+          <div class="right card">
+            <img class="thumb" src="../img/Rectangle 10.png" alt="Custom Website">
+          </div>
+        </div>
+
+        <!-- Row 3 -->
+        <div class="row">
+          <div class="left card">
+            <img class="thumb" src="../img/Rectangle 11.png" alt="SEO Services">
+          </div>
+          <div class="right card">
+            <div class="copy">
+              <div class="title">SEO Services &amp; Content Marketing</div>
+              <p class="para">Rank higher and attract qualified traffic with strategic search engine optimization. Our data-driven approach combines technical optimization, content strategy, and keyword targeting to increase organic visibility and drive sustainable growth.</p>
+              <a class="more" href="#">Know More →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Row 4 -->
+        <div class="row">
+          <div class="left card">
+            <div class="copy">
+              <div class="title">Digital Marketing &amp; Brand Strategy</div>
+              <p class="para">Grow your brand with integrated marketing campaigns across channels. From social media advertising to brand development and lead generation, we craft cohesive strategies that deliver measurable ROI.</p>
+              <a class="more" href="#">Know More →</a>
+            </div>
+          </div>
+          <div class="right card">
+            <img class="thumb" src="../img/Rectangle 12.png" alt="Digital Marketing">
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== WHY CHOOSE ===== -->
+ <section class="why">
+  <div class="container">
+    <h2>Why Choose Nibras Consulting?</h2>
+    <p class="desc">
+      End-to-end digital solutions, proven results, and a team dedicated to your success.<br>
+      Let's build something remarkable together.
+    </p>
+    <a class="btn btn-primary" href="#">Get Free Consultation →</a>
+  </div>
+</section>
+
+<div id="footer-container" ></div>
+
+<script>
+ fetch("header.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("header-container").innerHTML = data;
+
+      // ✅ Load the JS file *after* header is added to the DOM
+      const script = document.createElement("script");
+      script.src = "../js/header.js";
+      document.body.appendChild(script);
+    });
+    fetch("footer.html")
+        .then(res => res.text())
+        .then(data => document.getElementById("footer-container").innerHTML = data);
+</script>
+
+</body>
+</html>

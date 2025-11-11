@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Page</title>
+  <link rel="stylesheet" href="../css/about.css" />
+  
+</head>
+<body>
+  <div id="header-container"></div>
+
+  <!-- ✅ HERO SECTION -->
+  <section class="aboutpage-banner">
+    <div class="aboutpage-banner-bg"></div>
+    <div class="aboutpage-banner-content">
+      <p class="aboutpage-label">ABOUT US</p>
+      <h1 class="aboutpage-title">Empowering Growth Through Technology and Experience</h1>
+      <p class="aboutpage-desc">
+       At Nibras, we don’t just build technology, we build partnerships! </p>
+      <a href="#" class="aboutpage-btn">Get in Touch</a>
+    </div>
+  </section>
+
+  <!-- ✅ VIDEO SECTION -->
+  <section class="aboutpage-video-section">
+      <video id="aboutpage-video" muted autoplay loop playsinline preload="auto">
+    <source src="https://www.pexels.com/download/video/3192305/" type="video/mp4" />
+    Your browser does not support the video tag.
+</video>
+    <div class="aboutpage-video-content">
+      <h2 class="aboutpage-side-title">OUR PHILOSOPHY</h2>
+      <p>
+       Founded by a team of industry veterans with over 20 years of experience in IT and digital innovation, Nibras Consulting brings together experts in software development, project management, marketing, and business strategy.</p>
+      <a class="aboutpage-side-btn" href="#">Join Us</a>
+    </div>
+  </section>
+
+  <div id="howmake-container"></div>
+  <div id="whychoose-container"></div>
+    <div id="impact-container"></div>
+
+  <div id="steps-container"></div>
+  <div id="aboutconsulting-container"></div>
+  <div id="footer-container"></div>
+
+  <script>
+    /* ✅ HEADER + FOOTER LOADER */
+     fetch("header.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("header-container").innerHTML = data;
+
+      // ✅ Load the JS file *after* header is added to the DOM
+      const script = document.createElement("script");
+      script.src = "../js/header.js";
+      document.body.appendChild(script);
+    });
+
+    fetch("footer.html")
+      .then(res => res.text())
+      .then(data => (document.getElementById("footer-container").innerHTML = data));
+
+    fetch("WhyBusinesseschoose.html")
+      .then(res => res.text())
+      .then(data => (document.getElementById("whychoose-container").innerHTML = data));
+
+    fetch("HowWeMakeYour.html")
+      .then(res => res.text())
+      .then(data => (document.getElementById("howmake-container").innerHTML = data));
+
+    fetch("steps.html")
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById("steps-container").innerHTML = data;
+        const script = document.createElement("script");
+        script.src = "../js/steps.js";
+        script.defer = true;
+        document.body.appendChild(script);
+      });
+
+      
+    fetch("impact.html")
+      .then(res => res.text())
+      .then(data => (document.getElementById("impact-container").innerHTML = data));
+
+    fetch("aboutconsulting.html")
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById("aboutconsulting-container").innerHTML = data;
+        const script = document.createElement("script");
+        script.src = "../js/aboutconsulting.js";
+        script.onload = () => {
+          if (typeof initAboutConsulting === "function") {
+            initAboutConsulting();
+          }
+        };
+        document.body.appendChild(script);
+      });
+
+    /* ✅ VIDEO SCROLL EFFECT — only for desktop */
+    const video = document.getElementById("aboutpage-video");
+    const content = document.querySelector(".aboutpage-video-content");
+    const section = document.querySelector(".aboutpage-video-section");
+
+    function isMobile() {
+      return window.innerWidth <= 475;
+    }
+
+    if (!isMobile()) {
+      window.addEventListener("scroll", () => {
+        const sectionTop = section.offsetTop;
+        const scrolled = window.scrollY - sectionTop;
+
+        if (scrolled > 100) video.play();
+
+        const maxScroll = 800;
+        const widthPercent = Math.max(50, 100 - (scrolled / maxScroll) * 50);
+        video.style.width = `${widthPercent}%`;
+
+        if (widthPercent <= 50) {
+          content.classList.add("visible");
+        } else {
+          content.classList.remove("visible");
+        }
+      });
+    }
+  </script>
+</body>
+</html>
