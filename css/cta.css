@@ -88,22 +88,21 @@ body {
   }
 }
 
+.ctacontentsection {
+  padding: 60px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: "Poppins", sans-serif;
+}
 
-       /* cta.css */
+.ctacontentsection__header {
+  text-align: center;
+  margin-bottom: 60px;
+}
 
-        .ctacontentsection {
-          padding: 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .ctacontentsection__header {
-            text-align: center;
-            color: rgb(52, 51, 51);
-            margin-bottom: 50px;
-        }
 
         .ctacontentsection__title {
+          color: #373735;
             font-size: 3rem;
             font-weight: 700;
             margin-bottom: 15px;
@@ -111,6 +110,7 @@ body {
         }
 
         .ctacontentsection__subtitle {
+           color: #373735;
             font-size: 1.5rem;
             font-weight: 300;
             margin-bottom: 20px;
@@ -118,6 +118,7 @@ body {
         }
 
         .ctacontentsection__description {
+           color: #373735;
             font-size: 1.1rem;
             line-height: 1.6;
             max-width: 900px;
@@ -125,131 +126,55 @@ body {
             opacity: 0.9;
         }
 
-        .ctacontentsection__grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 30px;
-            margin-top: 40px;
-        }
+.ctacontentsection__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 60px 50px;
+}
 
-        .ctacontentsection__card {
-            background: white;
-            border-radius: 20px;
-            padding: 40px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
+.ctacontentsection__card {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  width: 400px;
+}
 
-        .ctacontentsection__card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 5px;
-            background: linear-gradient(90deg, #FF7518, #d16116);
-        }
+.ctacontentsection__icon {
+  font-size: 2.2rem;
+  color: #373735;
+  flex-shrink: 0;
+}
 
-        .ctacontentsection__card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 30px 80px rgba(0,0,0,0.4);
-        }
+.ctacontentsection__cardcontent {
+  flex: 1;
+}
 
-        .ctacontentsection__cardtitle {
-            font-size: 1.8rem;
-            color: #2d3748;
-            margin-bottom: 20px;
-            font-weight: 700;
-        }
+.ctacontentsection__cardtitle {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #40501f;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  margin-bottom: 10px;
+}
 
-        .ctacontentsection__carddescription {
-            font-size: 1rem;
-            line-height: 1.8;
-            color: #4a5568;
-            margin-bottom: 15px;
-        }
+.ctacontentsection__carddescription {
+  color: #333;
+  font-size: 1rem;
+  line-height: 1.7;
+}
 
-        .ctacontentsection__icon {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, #FF7518 0%, #c55e1a 100%);
-            border-radius: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-            margin-bottom: 20px;
-            color: white;
-        }
+@media (max-width: 968px) {
+  .ctacontentsection__grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
 
-        .ctacontentsection__footer {
-            text-align: center;
-            margin-top: 60px;
-            padding: 40px;
-            background: white;
-            border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-        }
+  .ctacontentsection__card {
 
-        .ctacontentsection__footertitle {
-            font-size: 2rem;
-            color: #2d3748;
-            font-weight: 700;
-            margin-bottom: 15px;
-        }
-
-        .ctacontentsection__footertext {
-            font-size: 1.1rem;
-            color: #4a5568;
-            line-height: 1.6;
-        }
-
-        .ctacontentsection__button {
-            display: inline-block;
-            margin-top: 25px;
-            padding: 15px 40px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 1.1rem;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
-        }
-
-        .ctacontentsection__button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.6);
-        }
-
-        @media (max-width: 968px) {
-            .ctacontentsection__grid {
-                grid-template-columns: 1fr;
-            }
-
-            .ctacontentsection__title {
-                font-size: 2.5rem;
-            }
-
-            .ctacontentsection__subtitle {
-                font-size: 1.2rem;
-            }
-        }
-
-        @media (max-width: 640px) {
-            .ctacontentsection__title {
-                font-size: 2rem;
-            }
-
-            .ctacontentsection__card {
-                padding: 30px;
-            }
-
-            .ctacontentsection__cardtitle {
-                font-size: 1.5rem;
-            }
-        }
-  
+  width: 280px;
+}
+  .ctacontentsection__title {
+    font-size: 2.2rem;
+  }
+}
